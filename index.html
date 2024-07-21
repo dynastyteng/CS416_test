@@ -69,47 +69,7 @@
     const xAxisG = g.append('g').call(xAxis)
       .attr('transform', `translate(0,${tableHeight})`);
 
-    g.selectAll('rect').data(data)
-      .enter().append('rect')
-        .attr('y', d => yScale(yValue(d)))
-        .attr('width', d => xScale(xValue(d)))
-        .attr('height',30);
 
-      const annotations = [
-    {
-      note: {
-        label: "The populations and the vaccinate status?",
-        title: "The factors for the newly added cases"
-      },
-      x: 480,
-      y: 300,
-      dy: 10,
-      dx: 100,
-      wrap: 200,
-      color: ["#cc0000"],
-      padding : 10
-    }
-  ]
-
-  d3.select("svg")
-        .append("g")
-        .call(d3.annotation().annotations(annotations))
-
-        svg.append("text")
-        .attr("class", "y label")
-        .attr("text-anchor", "end")
-        .attr("x", -250)
-        .attr("y", 0)
-        .attr("dy", "0.75em")
-        .attr("transform", "rotate(-90)")
-        .text("States Name");
-
-        svg.append("text")
-        .attr("class", "x label")
-        .attr("text-anchor", "end")
-        .attr("x", 500)
-        .attr("y", height)
-        .text("New Cases");
 
   };
   </script>
